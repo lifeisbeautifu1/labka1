@@ -41,8 +41,6 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
     }
   });
 });
@@ -61,9 +59,8 @@ hamburger.addEventListener('click', (e) => {
 // Hide Mobile Menu on Desktop
 
 window.addEventListener('resize', (e) => {
-  if (e.target.innerWidth > 768) {
-    if (hamburger.classList.contains('active'))
-      hamburger.classList.remove('active');
+  if (e.target.innerWidth > 768 && hamburger.classList.contains('active')) {
+    hamburger.classList.remove('active');
   }
 });
 
@@ -115,7 +112,9 @@ name.addEventListener('input', (e) => {
   }
 });
 
-send.addEventListener('click', () => {
+send.addEventListener('click', (e) => {
+  e.preventDefault();
+
   if (!city.value) {
     select.classList.add('form__control--invalid');
   }
