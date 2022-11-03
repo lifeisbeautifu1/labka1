@@ -85,16 +85,21 @@ select.addEventListener('click', (e) => {
   select.classList.add('focus');
 });
 
+select.addEventListener('blur', (e) => {
+  dropdown.classList.add('hide');
+  select.classList.remove('focus');
+});
+
 clear.addEventListener('click', () => {
   city.value = '';
 });
 
-window.addEventListener('click', (e) => {
-  if (!select.contains(e.target)) {
-    dropdown.classList.add('hide');
-    select.classList.remove('focus');
-  }
-});
+// window.addEventListener('click', (e) => {
+//   if (!select.contains(e.target)) {
+//     dropdown.classList.add('hide');
+//     select.classList.remove('focus');
+//   }
+// });
 
 // Form Validation
 

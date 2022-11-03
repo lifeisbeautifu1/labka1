@@ -553,26 +553,40 @@ body {
 /* Mobile Menu */
 
 .nav__mobile-menu {
-  transform: translateX(300px);
   position: absolute;
+  display: flex;
   top: 0;
   bottom: 0;
-  right: 0;
+  right: -300px;
   z-index: 5;
   width: 300px;
   background: var(--bg-color);
   height: 100vh;
-  display: flex;
   gap: 1.5rem;
   flex-direction: column;
   align-items: center;
   padding: 5rem 2rem;
   justify-content: flex-start;
-  transition: transform 0.5s;
+  transition: all 0.5s;
 }
 
 .hamburger.active + .nav__mobile-menu {
-  transform: translateX(0);
+  right: 0;
+}
+
+@keyframes noAnimation {
+  0% {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
+  }
+  100% {
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
+  }
 }
 
 /* Card */
