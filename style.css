@@ -574,21 +574,6 @@ body {
   right: 0;
 }
 
-@keyframes noAnimation {
-  0% {
-    -moz-transition: none;
-    -webkit-transition: none;
-    -o-transition: color 0 ease-in;
-    transition: none;
-  }
-  100% {
-    -moz-transition: none;
-    -webkit-transition: none;
-    -o-transition: color 0 ease-in;
-    transition: none;
-  }
-}
-
 /* Card */
 
 .card {
